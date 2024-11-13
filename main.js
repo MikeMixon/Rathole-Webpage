@@ -79,3 +79,17 @@ window.addEventListener('scroll', () => {
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Form submission handling
+document.querySelector('#contactUs form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const submitButton = this.querySelector('input[type="submit"]');
+    submitButton.classList.add('loading');
+    
+    // Simulate form submission (replace with your actual form handling)
+    setTimeout(() => {
+        submitButton.classList.remove('loading');
+        alert('Thank you for your message. We will get back to you soon!');
+        this.reset();
+    }, 2000);
+});

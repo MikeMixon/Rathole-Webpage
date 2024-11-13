@@ -15,8 +15,8 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -42,26 +42,6 @@
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <h2>Contact Us</h2>
-            <p>Send us a message, or call us for a quote. Use our contact form to tell us more about your project, and we will connect you with the services to fit your needs.</p>
-            
-            <div class="contact-info">
-                <address>
-                    <strong>Rathole Drilling Inc.</strong><br>
-                    2427 N US HWY 281<br>
-                    Alice, TX 78332, US<br>
-                    <a href="tel:+13616649995">(361) 664-9995</a>
-                </address>
-
-                <div class="hours">
-                    <h3>Hours</h3>
-                    <p>Monday - Friday: 8am - 5pm<br>
-                    Saturday - Sunday: Closed</p>
-                </div>
-            </div>
-        </section>
-
         <section id="services" class="services-section">
             <h2>Our Services</h2>
             <div class="services-grid">
@@ -81,12 +61,60 @@
                     <h3>Conductor Pipe</h3>
                     <p>Professional conductor pipe installation services.</p>
                 </div> 
-                <div class="hero">
-                    <a href="#contact" class="cta-button">Get a Quote</a>
-                </div>
             </div>
         </section>
 
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Send us a message, or call us for a quote. Use our contact form to tell us more about your project, and we will connect you with the services to fit your needs.</p>
+            
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <address>
+                        <strong>Rathole Drilling Inc.</strong><br>
+                        2427 N US HWY 281<br>
+                        Alice, TX 78332, US<br>
+                        <a href="tel:+13616649995">(361) 664-9995</a>
+                    </address>
+
+                    <div class="hours">
+                        <h3>Hours</h3>
+                        <p>Monday - Friday: 8am - 5pm<br>
+                        Saturday - Sunday: Closed</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form action="#" method="post">
+                    <div class="column">
+                        <label for="the-name">Your Name</label>
+                        <input type="text" name="name" id="the-name" required>
+                    
+                        <label for="the-email">Email Address</label>
+                        <input type="email" name="email" id="the-email" required>
+                    
+                        <label for="the-phone">Phone Number</label>
+                        <input type="tel" name="phone" id="the-phone" required>
+                    
+                        <label for="the-reason">How can we help you?</label>
+                        <select name="reason" id="the-reason" required>
+                            <option value="">Choose one</option>
+                            <option value="rathole">Rathole Drilling Services</option>
+                            <option value="mousehole">Mousehole Drilling Services</option>
+                            <option value="cellar">Cellar Construction</option>
+                            <option value="conductor">Conductor Pipe Installation</option>
+                            <option value="other">Other Services</option>
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label for="the-message">Message</label>
+                        <textarea name="message" id="the-message" required></textarea>
+                        <input type="submit" value="Send Message">
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
