@@ -46,9 +46,11 @@ function typeWriter(element, text, speed = 50) {
 // Add this at the end of your existing JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero h2');
-    const originalText = heroTitle.innerText;
-    heroTitle.innerText = '';
-    typeWriter(heroTitle, originalText);
+    if (heroTitle) {
+        const originalText = heroTitle.innerText;
+        heroTitle.innerText = '';
+        typeWriter(heroTitle, originalText);
+    }
 });
 
 // Add scroll progress indicator
@@ -81,15 +83,37 @@ backToTopButton.addEventListener('click', () => {
 });
 
 // Form submission handling
-document.querySelector('#contactUs form').addEventListener('submit', function(e) {
+document.querySelector('.contact-section form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const submitButton = this.querySelector('input[type="submit"]');
-    submitButton.classList.add('loading');
     
-    // Simulate form submission (replace with your actual form handling)
-    setTimeout(() => {
+    const form = this;
+    const submitButton = form.querySelector('input[type="submit"]');
+    submitButton.classList.add('loading');
+
+    // Prepare the template parameters
+    const templateParams = {
+        to_name: "Rathole Drilling", // Add recipient name
+        from_name: document.getElementById('the-name').value,
+        from_email: document.getElementById('the-email').value,
+        phone: document.getElementById('the-phone').value,
+        message: document.getElementById('the-message').value,
+        service: document.getElementById('the-reason').value
+    };
+
+    // Replace these with your actual EmailJS credentials
+    emailjs.send(
+        'Rathole-Contact-Us', // Get this from EmailJS dashboard
+        'template_myfxx1', // Get this from EmailJS dashboard
+        templateParams
+    )
+    .then(function(response) {
         submitButton.classList.remove('loading');
         alert('Thank you for your message. We will get back to you soon!');
-        this.reset();
-    }, 2000);
+        form.reset();
+    })
+    .catch(function(error) {
+        submitButton.classList.remove('loading');
+        console.error('EmailJS error:', error);
+        alert('Sorry, there was an error sending your message. Please try again.');
+    });
 });
