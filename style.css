@@ -236,3 +236,10 @@ nav ul li a:hover {
         padding-top: 5rem;
     }
 }
+
+.header-icon {
+    width: 50px;  /* Adjust size as needed */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
