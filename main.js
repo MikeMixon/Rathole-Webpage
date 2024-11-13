@@ -92,12 +92,11 @@ document.querySelector('.contact-section form').addEventListener('submit', funct
 
     // Prepare the template parameters
     const templateParams = {
-        to_name: "Rathole Drilling", // Add recipient name
         from_name: document.getElementById('the-name').value,
         from_email: document.getElementById('the-email').value,
         phone: document.getElementById('the-phone').value,
-        message: document.getElementById('the-message').value,
-        service: document.getElementById('the-reason').value
+        service: document.getElementById('the-reason').value,
+        message: document.getElementById('the-message').value
     };
 
     // Replace these with your actual EmailJS credentials
