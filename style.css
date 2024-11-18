@@ -12,7 +12,7 @@ header {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -31,6 +31,7 @@ header h1 {
     font-size: 1.5rem;
     position: relative;
     z-index: 1;
+    margin-left: 1rem;
 }
 
 /* Main Content */
@@ -249,11 +250,16 @@ a:hover {
 }
 
 /* Navigation */
+nav {
+    margin-left: auto;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     margin: 0;
+    gap: 1.5rem;
 }
 
 nav ul li {
@@ -378,32 +384,27 @@ nav ul li a:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 0.5rem;
+        justify-content: space-between;
     }
 
     nav ul {
-        margin-top: 0.5rem;
+        gap: 1rem;
     }
 
-    nav ul li {
-        margin: 0 0.25rem;
-    }
-
-    main {
-        padding-top: 5rem;
+    nav ul li a {
+        font-size: 0.85rem;
     }
 }
 
 .header-icon {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 17%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-left: 0;
+    flex-shrink: 0;
     z-index: 0;
     border-radius: 50%;
+    padding-left: 10px;
 }
 
 .animate-on-scroll {
